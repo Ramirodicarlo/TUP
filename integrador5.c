@@ -87,7 +87,7 @@ void cargarEnvios()
         scanf("%i", &envios[i].destino);
 
         printf("Ingrese la hora, entre 8 y 22: ");
-        scanf("%f", &envios[i].horaPlanificada);
+        scanf("%i", &envios[i].horaPlanificada);
 
         printf("Ingrese el estado: ");
         printf("\n0- Pendiente");
@@ -162,25 +162,29 @@ void modificarEstadoDeUnEnvio()
 
 void mostrarEnvioParaDestino(int destino)
 {
+    switch(destino)
+        {
+            case 1:
+                printf("Rosario:\n");
+                break;
+            case 2:
+                printf("Funes:\n");
+                break;
+            case 3:
+                printf("Roldan:\n");
+                break;
+            case 4:
+                printf("Baigorria:\n");
+                break; 
+        };
     for (int i = 0; i < tam; i++)
     {
         if (destino == envios[i].destino)
         {
-            switch(destino)
-            {
-                case 1:
-                    printf("Rosario");
-                    break;
-                case 2:
-                    printf("Funes");
-                    break;
-                case 3:
-                    printf("Roldan");
-                    break;
-                case 4:
-                    printf("Baigorria");
-                    break; 
-            };
+           printf("Numero de  envio:%i\n",envios[i].id);
+           printf("Hora planificada:%i\n",envios[i].horaPlanificada);
+           printf("Estado:%i\n",envios[i].estado);
+           printf("\n");
         };
         
     }
