@@ -10,9 +10,9 @@ struct pedido
     int estado;
 };
 
-struct pedido envios[3];
+struct pedido envios[30];
 
-const int tam = 3;
+const int tam = 30;
 
 void cargarEnvios();
 void mostrarEnvios();
